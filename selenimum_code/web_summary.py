@@ -32,7 +32,7 @@ def web_data(url):
     return visible_text
 
 
-genai.configure(api_key="AIzaSyBkTjjs-5pGqCrq7Inc4X1jTx7mc5Nfcrc")
+genai.configure(api_key="<your api key>")")
 
 if __name__=='__main__':
 
