@@ -81,14 +81,14 @@ def scrape_flipkart_reviews(url, max_page=5):
         page_url = f'{url}{page}'
         driver.get(page_url)
 
-        review_elements = driver.find_elements(By.XPATH, "//div[@class='col EPCmJX Ma1fCG']")
+        review_elements = driver.find_elements(By.XPATH, "//*[@id='container']/div/div[3]/div/div[1]/div[2]")
         if review_elements:
             for review in review_elements:
                 review_data_dict = {}
                 try:
-                    review_data_dict['reviewer_name'] = review.find_element(By.XPATH, ".//p[@class='_2NsDsF AwS1CA']").text
-                    review_data_dict['rating'] = review.find_element(By.XPATH, ".//div[@class='XQDdHH Ga3i8K']").text
-                    review_data_dict['review_text'] = review.find_element(By.XPATH, ".//div[@class='ZmyHeo']").text
+                    review_data_dict['reviewer_name'] = review.find_element(By.XPATH, "//*[@id='container']/div/div[3]/div/div[1]/div[2]/div[3]/div/div/div/div[3]/div[1]/p[1]").text
+                    review_data_dict['rating'] = review.find_element(By.XPATH, "//*[@id='container']/div/div[3]/div/div[1]/div[2]/div[3]/div/div/div/div[1]/div").text
+                    review_data_dict['review_text'] = review.find_element(By.XPATH, "//*[@id='container']/div/div[3]/div/div[1]/div[2]/div[6]/div/div/div/div[2]/div/div/div").text
                     reviews.append(review_data_dict)
                 except NoSuchElementException:
                     print("Some elements not found on page", page)
@@ -124,7 +124,7 @@ if __name__=='__main__':
         else:
             print("Pattern not found in the link.")
         
-        print(reviews)
+        
         data_file = pd.DataFrame(reviews)
         # Perform sentiment analysis and further processing...
         st.write(data_file)

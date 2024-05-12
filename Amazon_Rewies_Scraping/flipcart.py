@@ -20,13 +20,13 @@ def scrape_flipkart_reviews(url, max_page=5):
             for review in review_elements:
                 review_data_dict = {}
                 try:
-                    # review_data_dict['reviewer_name'] = review.find_element(By.XPATH, ".//div[@class='_2NsDsF AwS1CA']").text
-                    # review_data_dict['rating'] = review.find_element(By.XPATH, ".//div[@class='XQDdHH Ga3i8K']").text
-                    # review_data_dict['review_text'] = review.find_element(By.XPATH, ".//div[@class='ZmyHeo']").text
+                    review_data_dict['reviewer_name'] = review.find_element(By.XPATH, ".//div[@class='_2NsDsF AwS1CA']").text
+                    review_data_dict['rating'] = review.find_element(By.XPATH, ".//div[@class='XQDdHH Ga3i8K']").text
+                    review_data_dict['review_text'] = review.find_element(By.XPATH, ".//div[@class='ZmyHeo']").text
 
-                    reviewer_name_xpath = "//div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_27M-vq']//div[@class='_2wzgFH']"
-                    rating_xpath = "//div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_27M-vq']//div[@class='XQDdHH Ga3i8K']"
-                    review_text_xpath = "//div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_27M-vq']//div[@class='t-ZTKy']"
+                    # reviewer_name_xpath = "//div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_27M-vq']//div[@class='_2wzgFH']"
+                    # rating_xpath = "//div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_27M-vq']//div[@class='XQDdHH Ga3i8K']"
+                    # review_text_xpath = "//div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_2aFisS']/div[@class='_27M-vq']//div[@class='t-ZTKy']"
 
                     reviews.append(review_data_dict)
                 except NoSuchElementException:
