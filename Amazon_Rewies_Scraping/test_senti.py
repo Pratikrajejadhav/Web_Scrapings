@@ -10,7 +10,7 @@ import google.generativeai as genai
 import google.ai.generativelanguage as glm
 import pandas as pd
 
-genai.configure(api_key="AIzaSyD9Tj4yxSUTFYRZaFtPnqCaiWUgMW3m4J4")
+genai.configure(api_key="<your api key>")
 
 
 # Web driver
