@@ -10,7 +10,7 @@ import google.generativeai as genai
 import google.ai.generativelanguage as glm
 import pandas as pd
 
-genai.configure(api_key="<your api key>")
+genai.configure(api_key="AIzaSyAVdmSlrL8PA62m--SllyfcOACQ5S2ws5U")  #AIzaSyD9Tj4yxSUTFYRZaFtPnqCaiWUgMW3m4J4
 
 
 # Web driver
@@ -74,7 +74,7 @@ def scrape_flipkart_reviews(url, max_page=5):
     return reviews
 
 # Streamlit code
-st.title('Web Scraping App')
+st.title('Web Scraping & Sentimental Analysis App')
 
 option = st.sidebar.selectbox(
     'Which website do you want to scrape?',

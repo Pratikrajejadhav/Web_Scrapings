@@ -8,6 +8,8 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+
+
 # Web driver
 driver = webdriver.Chrome()
 
@@ -86,5 +88,7 @@ if st.sidebar.button('Scrape'):
 
     df = pd.DataFrame(reviews)
     st.write(df)
+
+
 
 driver.close()
