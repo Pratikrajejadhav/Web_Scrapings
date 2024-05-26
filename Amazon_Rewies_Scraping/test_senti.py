@@ -10,13 +10,13 @@ import google.generativeai as genai
 import google.ai.generativelanguage as glm
 import pandas as pd
 
-genai.configure(api_key="AIzaSyAVdmSlrL8PA62m--SllyfcOACQ5S2ws5U")  #AIzaSyD9Tj4yxSUTFYRZaFtPnqCaiWUgMW3m4J4
+genai.configure(api_key="AIzaSyCKESnAOIkl8fIqV-KHOUx5pF-ythxJ1Ng")  #AIzaSyD9Tj4yxSUTFYRZaFtPnqCaiWUgMW3m4J4
 
 
 # Web driver
 driver = webdriver.Chrome()
 
-def scrape_amazon_reviews(url, max_page=5):
+def scrape_amazon_reviews(url, max_page=1):
     reviews = []
     for page in range(1, max_page + 1):
         print("Page:", page)
@@ -99,7 +99,7 @@ if st.sidebar.button('Scrape'):
     for reviews in df['review_text']:
 
              # model selection
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
         prompt = """ Give the Sentiment analysis of given review only in two words either ***POSITIVE** 😀😀  or **NEGATIVE** ☹️☹️ """
 
